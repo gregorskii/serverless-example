@@ -12,7 +12,7 @@ module.exports.example = (event, context, callback) => {
     const result = exampleLib();
 
     callback(null, responses.successResponse(
-      result
+      `${body.hello} ${result}`
     ));
   } else {
     callback(null, responses.errorResponse(
