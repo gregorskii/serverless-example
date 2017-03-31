@@ -1,0 +1,27 @@
+service: serverless-api
+
+frameworkVersion: ">=1.0.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  stage: dev
+  profile: deving
+  memory: 512
+  timeout: 60
+  environment:
+    CORS_DOMAIN: http://cors.localhost
+
+functions:
+  example:
+    handler: example/nested/handler.state
+    description: Example nested handler
+    memory: 512
+    timeout: 60
+    environment:
+      SOME: 'VALUE'
+    events:
+      - http:
+          path: example/example
+          method: get
+          cors: true
