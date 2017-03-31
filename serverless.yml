@@ -23,5 +23,5 @@ functions:
     events:
       - http:
           path: example/example
-          method: get
+          method: post
           cors: true
